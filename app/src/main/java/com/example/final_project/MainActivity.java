@@ -14,6 +14,7 @@ import java.time.Instant;
 public class MainActivity extends AppCompatActivity {
 
     private Button Regis_but;
+    private Button login_but;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +27,22 @@ public class MainActivity extends AppCompatActivity {
                 openRegisterPage();
             }
         });
+
+        login_but = findViewById(R.id.button);
+        login_but.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLoginPage();
+            }
+        });
     }
     public void openRegisterPage(){
         Intent intent = new Intent(this, Register_Page.class);
+        startActivity(intent);
+    }
+
+    public void openLoginPage(){
+        Intent intent = new Intent(this, Main_menu.class);
         startActivity(intent);
     }
 }
